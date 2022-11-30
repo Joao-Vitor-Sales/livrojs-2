@@ -21,6 +21,13 @@ function calcularMedia(){
     if (media >= 7){
         // altera o texto e estilo da cor do elemento outSituacao
         outSituacao.textContent = ("Parabéns " + nome + "! Você foi aprovado(a)");
+        outSituacao.style.color = "blue";
+    } else {
+        outSituacao.textContent = "Ops " + nome + "... Você foi reprovado(a)";
         outSituacao.style.color = "red";
     }
 }
+
+// cria uma referência ao elemento btResultado (botão)
+var btResultado = document.getElementById("btResultado");
+btResultado.addEventListener("click", calcularMedia);
