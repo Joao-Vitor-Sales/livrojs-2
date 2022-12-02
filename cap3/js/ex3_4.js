@@ -13,7 +13,11 @@ function horaNaFranca(){
 
     var horaFranca = hora + 5;
 
-    outResposta.textContent = "Hora na Franca: " + horaFranca;
+    if (horaFranca >= 24){
+        horaFranca = horaFranca - 24;
+    }
+
+    outResposta.textContent = "Hora na Franca: " + horaFranca.toFixed(2);
 }
 
 var btExibir = document.getElementById("btExibir");
