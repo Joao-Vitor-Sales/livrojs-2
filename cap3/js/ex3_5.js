@@ -2,9 +2,21 @@ function calcularRaiz(){
     var inNumero = document.getElementById("inNumero");
     var outResposta = document.getElementById("outResposta");
 
-    var numero = Number(Math.sqrt(inNumero.value));
+    var numero = Number(inNumero.value);
 
-    outResposta.textContent = ("A Raiz é: " + numero);
+    if (numero == "" || isNaN(numero)){
+        alert("Informe um número válido...");
+        inNumero.focus();
+        return;
+    }
+
+    var raiz = Math.sqrt(numero);
+
+    if ( raiz == Math.floor(raiz)){
+        outResposta.textContent = ("A Raiz é: " + raiz);
+    } else{
+        outResposta.textContent = ("Não há raiz exata para " + numero);
+    }
 }
 
 var btExibir = document.getElementById("btExibir");
